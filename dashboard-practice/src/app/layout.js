@@ -5,7 +5,7 @@ import { AppNavbar } from "@/components/app-navbar";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body>
         <SidebarProvider>
           <div className="flex h-screen w-full">
