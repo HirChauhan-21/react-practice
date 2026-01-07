@@ -7,12 +7,21 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
-import { Home, User, Settings, LayoutDashboard } from "lucide-react";
+import { Home, User, Settings } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export function AppSidebar() {
+  const { setOpenMobile } = useSidebar();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpenMobile(false);
+  }, [pathname, setOpenMobile]);
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
